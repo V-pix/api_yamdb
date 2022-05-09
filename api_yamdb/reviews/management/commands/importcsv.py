@@ -54,7 +54,7 @@ class Command(BaseCommand):
         for row in csv_reader:
             obj_genre = get_object_or_404(Genre, id=row[2])
             obj_title = get_object_or_404(Title, id=row[1])
-            obj, created = GenreTitle.objects.get_or_create(
+            obj, created = Title.objects.get_or_create(
                 id=row[0],
                 genre=obj_genre,
                 title=obj_title)
